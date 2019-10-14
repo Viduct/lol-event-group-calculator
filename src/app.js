@@ -282,7 +282,7 @@ class worldsGroupsCalculator {
 
       return false;
     } else {
-      if (this.throttleTime + 20000 < Date.now()) {
+      if (this.throttleTime + 300 < Date.now()) {
         this.throttleTime = Date.now();
 
         return false;
