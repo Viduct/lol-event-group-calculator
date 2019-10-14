@@ -1,9 +1,10 @@
 {
     "name": "Worlds 2019 Group Stage Calculator",
     "short_name": "Worlds 2019 Calculator",
+    "start_url": "https://worlds-calculator.viduct.de",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "./assets/favicon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         }
