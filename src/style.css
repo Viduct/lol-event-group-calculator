@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
+@font-face {
+    font-family: 'Cutive Mono';
+    src: url('./assets/CutiveMono-Regular.ttf') format('truetype');
+}
 
 body {
     background-color: #1c1c1f;

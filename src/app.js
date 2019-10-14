@@ -123,6 +123,8 @@ class worldsGroupsCalculator {
       } else if (teams[1].classList.contains("active")) {
         winningTeam = teams[1];
         losingTeam = teams[0];
+      } else {
+        this.mutateResult(null, null, gameId);
       }
 
       if (!winningTeam) {
@@ -209,8 +211,6 @@ class worldsGroupsCalculator {
   draw() {
     const groupsNode = document.getElementById("groups");
 
-    // const groups = document.querySelectorAll("[rel='js-game']");
-
     while (groupsNode.firstChild) {
       groupsNode.removeChild(groupsNode.firstChild);
     }
@@ -226,18 +226,18 @@ class worldsGroupsCalculator {
         row.classList.add("row", "d-flex", "justify-content-center");
 
         const numberCol = document.createElement("div");
-        const numberText = document.createTextNode(`${i + 1}:`);
-        numberCol.classList.add("col-1", "text-left");
+        const numberText = document.createTextNode(`${i + 1}`);
+        numberCol.classList.add("col-auto", "text-left");
         numberCol.appendChild(numberText);
 
         const nameCol = document.createElement("div");
         const nameText = document.createTextNode(element.name);
-        nameCol.classList.add("col-5", "col-sm-5");
+        nameCol.classList.add("col-5");
         nameCol.appendChild(nameText);
 
         const resultCol = document.createElement("div");
         const resultText = document.createTextNode(`${element.wins} - ${element.losses}`);
-        resultCol.classList.add("col-3", "col-2", "text-right");
+        resultCol.classList.add("col-auto", "text-right");
         resultCol.appendChild(resultText);
 
         row.appendChild(numberCol);
