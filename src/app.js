@@ -57,7 +57,7 @@ class worldsGroupsCalculator {
 
     const toggles = document.querySelectorAll(".btn.btn-outline-primary");
 
-    const buttonInteraction = () => {
+    const buttonInteraction = (event) => {
       if (this.throttle()) {
         return;
       }
@@ -81,7 +81,7 @@ class worldsGroupsCalculator {
     };
 
     toggles.forEach((elem) => {
-      elem.addEventListener('touchstart', buttonInteraction);
+      elem.addEventListener('touchend', buttonInteraction);
       elem.addEventListener('click', buttonInteraction);
     });
 
@@ -282,7 +282,7 @@ class worldsGroupsCalculator {
 
       return false;
     } else {
-      if (this.throttleTime + 300 < Date.now()) {
+      if (this.throttleTime + 20000 < Date.now()) {
         this.throttleTime = Date.now();
 
         return false;
