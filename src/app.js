@@ -81,7 +81,7 @@ class worldsGroupsCalculator {
     };
 
     toggles.forEach((elem) => {
-      elem.addEventListener('touchend', buttonInteraction);
+      elem.addEventListener('touchstart', buttonInteraction);
       elem.addEventListener('click', buttonInteraction);
     });
 
