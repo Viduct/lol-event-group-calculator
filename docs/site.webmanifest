@@ -1,7 +1,7 @@
 {
     "name": "Worlds 2019 Group Stage Calculator",
     "short_name": "Worlds 2019 Calculator",
-    "start_url": "https://worlds-calculator.viduct.de",
+    "start_url": "https://viduct.github.io/lol-event-group-calculator/",
     "icons": [
         {
             "src": "./assets/favicon/android-chrome-192x192.png",
