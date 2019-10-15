@@ -37,11 +37,11 @@ class worldsGroupsCalculator {
         const html = `<div class="col text-right d-flex align-items-center justify-content-end">${this.getFullTeamName(game.team1)}</div>
                     <div class="col-auto d-flex align-items-center">
                         <div class="btn-group btn-group-toggle" rel="js-game" data-game-id="${game.id}" data-toggle="buttons">
-                            <label class="btn btn-outline-primary ${team1Status}">
-                                <input type="radio" name="options" id="game-${game.id}-${game.team1}" autocomplete="off" data-win="${game.team1}">
+                            <label class="btn btn-outline-primary btn-left ${team1Status}">
+                                <input type="button" id="game-${game.id}-${game.team1}" autocomplete="off" data-win="${game.team1}">
                             </label>
-                            <label class="btn btn-outline-primary ${team2Status}">
-                                <input type="radio" name="options" id="game-${game.id}-${game.team2}" autocomplete="off" data-win="${game.team2}">
+                            <label class="btn btn-outline-primary btn-right ${team2Status}">
+                                <input type="button" id="game-${game.id}-${game.team2}" autocomplete="off" data-win="${game.team2}">
                             </label>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ class worldsGroupsCalculator {
     const toggles = document.querySelectorAll(".btn.btn-outline-primary");
 
     const buttonInteraction = (event) => {
-      if (this.throttle()) {
+      if(this.throttle()) {
         return;
       }
 
@@ -67,6 +67,10 @@ class worldsGroupsCalculator {
       const parentChildren = target.parentNode.children;
 
       const sibling = parentChildren[0] !== target ? parentChildren[0] : parentChildren[1];
+
+      if (!sibling) {
+        return;
+      }
 
       if (target.classList.contains("active")) {
         target.classList.remove("active");
