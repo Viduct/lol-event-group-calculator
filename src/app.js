@@ -13,13 +13,13 @@ class worldsGroupsCalculator {
 
     const gamesNode = document.getElementById("games");
 
-    for (const [index, gameDay] of this.games.entries()) {
+    for (const [index, gameDay] of this.games.reverse().entries()) {
       const day = document.createElement("div");
       day.classList.add("col-12", "col-lg-6", "game-day");
 
       const headline = document.createElement("h2");
       headline.classList.add("d-flex", "justify-content-center");
-      headline.textContent = `Day ${index + 1}`;
+      headline.textContent = `Day ${this.games.length - index}`;
       day.appendChild(headline);
 
       for (const game of gameDay) {
