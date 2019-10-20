@@ -333,8 +333,8 @@ export default [
       id: 44,
       team1: "tl",
       team2: "ahq",
-      winner: null,
-      loser: null,
+      winner: "tl",
+      loser: "ahq",
     },
     {
       id: 45,
